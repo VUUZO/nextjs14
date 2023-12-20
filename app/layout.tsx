@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
+import { ThemeProvider } from '@/context/ThemeProvider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,19 +29,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider
-      appearance={{
-        elements: {
-          formButtonPrimary: 'bg-red-500 hover:bg-red-700',
-          footerActionLink: 'text-red-500 hover:text-red-700'
-        }
-      }}
-    >
-      <html lang="en">
+    <html lang="en">
         <body className={`${inter.variable} ${space_grotesk.variable}`}>
-          {children}
+        <ClerkProvider
+          appearance={{
+            elements: {
+              formButtonPrimary: 'bg-red-500 hover:bg-red-700',
+              footerActionLink: 'text-red-500 hover:text-red-700'
+            }
+          }}
+        >
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </ClerkProvider>
         </body>
       </html>
-    </ClerkProvider>
   )
 }
