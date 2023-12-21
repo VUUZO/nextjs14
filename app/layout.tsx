@@ -1,7 +1,7 @@
-import type { Metadata } from 'next'
-import { ClerkProvider } from '@clerk/nextjs'
-import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
+import type { Metadata } from 'next'
+import { Inter, Space_Grotesk } from 'next/font/google'
+import { ClerkProvider } from '@clerk/nextjs'
 import { ThemeProvider } from '@/context/ThemeProvider'
 
 const inter = Inter({
@@ -30,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-        <body className={`${inter.variable} ${space_grotesk.variable}`}>
+        <body className={`${inter.variable} ${space_grotesk.variable} background-light-850-dark_dark100`}>
         <ClerkProvider
           appearance={{
             elements: {
