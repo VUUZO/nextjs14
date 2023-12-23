@@ -34,8 +34,17 @@ export default function RootLayout({
         <ClerkProvider
           appearance={{
             elements: {
-              formButtonPrimary: 'bg-red-500 hover:bg-red-700',
-              footerActionLink: 'text-red-500 hover:text-red-700'
+              card: 'background-light900_dark200 shadow-xl dark:shadow-none border-2 border-light-800 dark:border-dark-300',
+              headerTitle: 'text-dark200_light900',
+              headerSubtitle: 'dark:text-zinc-500',
+              socialButtonsBlockButton: 'text-dark200_light900 border dark:bg-dark-300 dark:border-dark-300',
+              dividerLine: 'dark:bg-dark-400',
+              dividerText: 'dark:text-zinc-500',
+              formFieldLabel: 'dark:text-zinc-400',
+              formFieldInput: 'dark:bg-dark-300 dark:border dark:border-dark-400 dark:text-zinc-300',
+              formButtonPrimary: 'primary-gradient',
+              footerActionLink: 'text-primary-500 hover:text-primary-500',
+              footerActionText: 'dark:text-zinc-500'
             }
           }}
         >

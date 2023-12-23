@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export const RightSidebar = () => {
   return (
-    <section className="hidden xl:flex flex-col gap-16 w-[330px] p-5 background-light900_dark200 text-dark200_light900 border-l border-[#C8CBD954] dark:border-[#0F111780] pt-36">
+    <section className="hidden xl:flex flex-col gap-16 w-[330px] p-5 background-light900_dark200 text-dark200_light900 border-l sticky top-0 left-0 h-screen border-[#C8CBD954] dark:border-[#0F111780] pt-36">
       <div>
         <h3 className="h3-bold mb-8">Hot Network</h3>
         <div className="flex flex-col gap-[30px] items-start">
