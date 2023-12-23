@@ -29,7 +29,7 @@ export const RightSidebar = () => {
           <Link key={tag.id} href={tag.href} className="w-full">
             <div className="flex justify-between">
               <div className="px-4 py-2 rounded-md text-dark400_light500 background-light800_dark300 small-regular uppercase">{tag.label}</div>
-              <span text-dark500_light700>{tag.count}+</span>
+              <span className="text-dark500_light700">{tag.count}+</span>
             </div>
           </Link>
         ))}
