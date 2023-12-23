@@ -40,7 +40,7 @@ const config: Config = {
       },
       fontFamily: {
         inter: ["var(--font-inter)"],
-        spaceGrotesk: ["var(--font-inter)"],
+        spaceGrotesk: ["var(--font-space-grotesk)"],
       },
       boxShadow: {
         "light-100": "0px 12px 20px 0px rgba(184,184,184,.03)",
