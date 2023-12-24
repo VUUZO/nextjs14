@@ -48,6 +48,8 @@ const config: Config = {
         "light-300": "-10px 10px 20px 0px rgba(218,213,213,.10)",
         "dark-100": "0px 2px 10px 0px rgba(46,52,56,.10)",
         "dark-200": "2px 0px 20px 0px rgba(39,36,36,.04)",
+        "nav-focus": "0 0 0 4px hsla(26,100%,50%, .4)",
+        "shadow-nav-focus-dm": "0 0 0 4px hsla(26,80%,50%, .1)",
       },
       backgroundImage: {
         'auth-dark': "url('/assets/images/auth-dark.png')",
