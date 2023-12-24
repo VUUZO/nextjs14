@@ -1,4 +1,8 @@
+import { HomeFilters } from "@/components/home/HomeFilters"
+import { Filter } from "@/components/shared/Filter"
+import { LocalSearchbar } from "@/components/shared/search/LocalSearch"
 import { Button } from "@/components/ui/button"
+import { HomePageFilters } from "@/constants/filters"
 import Link from "next/link"
 
 const Home = () => {
@@ -13,10 +17,20 @@ const Home = () => {
       </div>    
 
       <div className="mt-11 flex justify-between gap-5 max-sm:flex-col sm:items-center">
-        LocalSearchbar
+        <LocalSearchbar
+          route={'/'}
+          placeholder={'Search questions'}
+          imgSrc="assets/icons/search.svg"
+          otherClasses="flex-1"
+        />
 
-        Filters
+        <Filter
+          filters={HomePageFilters}
+          message="Select a Filter"
+          containerClasses="hidden max-md:flex"
+        />
       </div>
+      <HomeFilters />
     </>
   )
 }
