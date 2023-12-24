@@ -10,8 +10,8 @@ export const GlobalSearch = () => {
   console.log(value)
 
   return (
-    <div className="relative w-full max-w-[600px] max-lg:hidden">
-      <div className="background-light800_darkgradient relative flex min-h-[56px] grow items-center gap-1 rounded-xl px-4">
+    <div className="relative w-full background-light800_darkgradient max-w-[600px] max-lg:hidden px-4 border border-light-700 dark:border-dark-300 focus-within:border-primary-500 focus-within:shadow-nav-focus rounded-[10px] transition-colors dark:focus-within:border-primary-500/80 dark:focus-within:shadow-nav-focus-dm">
+      <div className="relative flex grow items-center gap-4">
         <Image
           src={'/assets/icons/search.svg'}
           alt="search"
@@ -19,13 +19,13 @@ export const GlobalSearch = () => {
           height={24}
           className="cursor-pointer"
         />
-
-        <Input
+        <input
           type="text"
           placeholder="Search anything globally"
           value={value}
           onChange={e => setValue(e.target.value)}
-          className="no-focus placeholder paragraph-regular text-dark400_light700 border-none shadow-none outline-none bg-transparent" />
+          className="flex-1 outline-none bg-transparent min-h-[56px] paragraph-regular text-dark500_light500"
+        /> 
       </div>
     </div>
   )
