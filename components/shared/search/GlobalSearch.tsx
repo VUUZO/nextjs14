@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 
-import { Input } from "@/components/ui/input"
 import { useState } from "react"
 
 export const GlobalSearch = () => {
@@ -10,7 +9,7 @@ export const GlobalSearch = () => {
   console.log(value)
 
   return (
-    <div className="relative w-full background-light800_darkgradient max-w-[600px] max-lg:hidden px-4 border border-light-700 dark:border-dark-300 focus-within:border-primary-500 focus-within:shadow-nav-focus rounded-[10px] transition-colors dark:focus-within:border-primary-500/80 dark:focus-within:shadow-nav-focus-dm">
+    <div className="relative w-full background-light800_darkgradient max-w-[600px] rounded-[10px] transition-colors max-lg:hidden px-4 border border-light-700 dark:border-dark-300 focus-within:ring-4 focus-within:border-primary-500 dark:focus-within:border-primary-500/50 focus-within:ring-primary-500/20">
       <div className="relative flex grow items-center gap-4">
         <Image
           src={'/assets/icons/search.svg'}
