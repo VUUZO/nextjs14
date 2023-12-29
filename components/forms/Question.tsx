@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { QuestionsSchema } from '@/lib/validations'
+import Tiptap from '../editor/Tiptap'
 
 
 
@@ -68,6 +69,7 @@ export const Question = () => {
               </FormLabel>
               <FormControl className='py-4 px-6 paragraph-semibold text-dark300_light800 rounded-md border light-border-2 background-light800_dark300'>
                 {/* TODO: Add an Editor component */}
+                <Tiptap onChange={field.onChange} />
               </FormControl>
               <FormDescription className='body-regular text-light-500'>
                 Introduce the problem and expand on what you put in the title. Minimum 20 characters.
