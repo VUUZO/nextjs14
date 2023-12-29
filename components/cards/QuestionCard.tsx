@@ -45,7 +45,7 @@ export const QuestionCard = ({
       </div>
       <div className="flex justify-between flex-wrap gap-2">
         <Metric
-          imgUrl={`/assets/user.jpg`}
+          imgUrl={author.picture}
           alt="user"
           title={`· asked ${getTimestamp(createdAt)}`}
           value={author.name}
