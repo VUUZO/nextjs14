@@ -1,5 +1,3 @@
-import { Bold } from "lucide-react"
-import { Button } from "../ui/button"
 import { Toggle } from "../ui/toggle"
 import { Item } from "./MenuBar"
 
@@ -8,11 +6,11 @@ export const MenuItem = ({
 }: Item) => {
   return (
     <Toggle
-      size={"sm"}
+      size={"xs"}
       pressed={isActive}
       onPressedChange={action}
       title={title}
-      className={`p-0 ${isActive ? 'text-primary-500 dark:text-primary-500/70' : ''}`}
+      className={`${isActive ? 'text-primary-500 dark:text-primary-500/70' : ''} `}
     >
       <Icon />
     </Toggle>
