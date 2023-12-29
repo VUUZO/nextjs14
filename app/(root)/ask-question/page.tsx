@@ -4,10 +4,8 @@ import { auth } from "@clerk/nextjs"
 import { redirect } from "next/navigation"
 
 const Page = async () => {
-  // const { userId } = auth()
+  const { userId } = auth()
   
-  const userId = 'clerk123'
-
   if (!userId) redirect('/sign-in')
 
   const mongoUser = await getUserById({ userId })
