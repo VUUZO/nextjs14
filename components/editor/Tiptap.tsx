@@ -13,8 +13,9 @@ export const Tiptap = ({ onChange }: { onChange: (richText: string) => void }) =
   const editor = useEditor({
     editorProps: {
       attributes: {
-        class: 'prose dark:prose-invert text-dark300_light800 focus:outline-none'
+        class: 'prose dark:prose-invert text-dark300_light800 focus:outline-none min-h-[150px]',
       },
+
 
     },
     extensions: [
@@ -36,8 +37,10 @@ export const Tiptap = ({ onChange }: { onChange: (richText: string) => void }) =
   })
 
   return (
-    <div className='w-full border light-border-2 rounded-md bg-light-800 dark:bg-dark-200 overflow-hidden min-h-[216px] flex flex-col'>
-      {editor && <MenuBar editor={editor} />}
+    <div
+      className='border w-full light-border-2 rounded-md bg-light-800 dark:bg-dark-200 overflow-hidden flex flex-col'
+    >
+      { editor && <MenuBar editor={editor} /> }
       <EditorContent editor={editor} className='editor__conrent p-6 flex-1 text-dark300_light800'/>
     </div>
   )

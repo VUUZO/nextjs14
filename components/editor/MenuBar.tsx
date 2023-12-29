@@ -31,12 +31,6 @@ export const MenuBar = ({ editor }: { editor: Editor }) => {
       isActive: editor.isActive('code'),
     },
     {
-      Icon: () =>  <Highlighter className="editor-icon" />,
-      title: 'Highlight',
-      action: () => editor.chain().focus().toggleHighlight().run(),
-      isActive: editor.isActive('highlight'),
-    },
-    {
       Icon: () =>  <Heading1 className="editor-icon" />,
       title: 'Heading 1',
       action: () => editor.chain().focus().toggleHeading({ level: 1 }).run(),
@@ -81,7 +75,7 @@ export const MenuBar = ({ editor }: { editor: Editor }) => {
   ]
 
   return (
-    <div className="background-light900_dark300 py-[9px] border-b light-border-2 px-[21px] text-light-400 flex gap-2">
+    <div className="flex flex-wrap gap-1 xs:gap-2 py-[9px] px-[9px] xs:px-[21px] background-light900_dark300 border-b light-border-2 text-light-400">
       {
         items.map((item, i) => (
           <Fragment key={i}>

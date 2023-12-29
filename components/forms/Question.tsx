@@ -158,7 +158,7 @@ export const Question = () => {
                 </>
               </FormControl>
               <FormDescription className='body-regular text-light-500'>
-                Add up to 5 tags to describe what your question is about. Start typing to see suggestions.
+                Add up to 3 tags to describe what your question is about. Start typing to see suggestions.
               </FormDescription>
               <FormMessage className='text-red-500 body-regular'/>
             </FormItem>
@@ -166,7 +166,7 @@ export const Question = () => {
         />
         <Button
           type="submit"
-          className='paragraph-medium text-light-900 rounded-lg primary-gradient py-3 px-4 min-h-[46px] w-[173px] ring-offset-light-850 dark:ring-offset-dark-100'
+          className='self-end paragraph-medium text-light-900 rounded-lg primary-gradient py-3 px-4 min-h-[46px] w-[173px] ring-offset-light-850 dark:ring-offset-dark-100'
           disabled={isSubmitting}
         >
           Ask a Question
