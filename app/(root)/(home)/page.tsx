@@ -5,9 +5,13 @@ import { NoResult } from "@/components/shared/NoResult"
 import { LocalSearchbar } from "@/components/shared/search/LocalSearch"
 import { Button } from "@/components/ui/button"
 import { HomePageFilters } from "@/constants/filters"
+import { getQuestions } from "@/lib/actions/question.action"
 import Link from "next/link"
 
-const Home = () => {
+const Home = async () => {
+  const result = await getQuestions({})
+  const questions = result.questions
+
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
@@ -66,46 +70,46 @@ const Home = () => {
 
 export default Home
 
-const questions = [
-  {
-    _id: '1',
-    title: "How to use TypeScript with React?",
-    tags: [
-      { _id: "tag1", name: "React" },
-      { _id: "tag2", name: "TypeScript" },
-    ],
-    author: {
-      _id: "author1",
-      name: "John Doe",
-      picture: "url-to-picture",
-    },
-    upvotes: 2000000,
-    views: 12,
-    answers: [
-      { text: "Example answer 1", author: "Jane Doe" },
-      { text: "Example answer 2", author: "Bob Smith" },
-    ],
-    createdAt: new Date("2023-01-01"),
-  },
-  {
-    _id: '2',
-    title: "What are the best practices for unit testing in JavaScript?",
-    tags: [
-      { _id: "tag3", name: "JavaScript" },
-      { _id: "tag4", name: "Testing" },
-    ],
-    author: {
-      _id: "author2",
-      name: "Jane Smith",
-      picture: "url-to-picture",
-    },
-    upvotes: 338030,
-    views: 420420,
-    answers: [
-      { text: "Example answer 1", author: "John Doe" },
-      { text: "Example answer 2", author: "Alice Johnson" },
-      { text: "Example answer 3", author: "Max Muller" },
-    ],
-    createdAt: new Date("2023-02-15"),
-  },
-];
+// const questions = [
+//   {
+//     _id: '1',
+//     title: "How to use TypeScript with React?",
+//     tags: [
+//       { _id: "tag1", name: "React" },
+//       { _id: "tag2", name: "TypeScript" },
+//     ],
+//     author: {
+//       _id: "author1",
+//       name: "John Doe",
+//       picture: "url-to-picture",
+//     },
+//     upvotes: 2000000,
+//     views: 12,
+//     answers: [
+//       { text: "Example answer 1", author: "Jane Doe" },
+//       { text: "Example answer 2", author: "Bob Smith" },
+//     ],
+//     createdAt: new Date("2023-01-01"),
+//   },
+//   {
+//     _id: '2',
+//     title: "What are the best practices for unit testing in JavaScript?",
+//     tags: [
+//       { _id: "tag3", name: "JavaScript" },
+//       { _id: "tag4", name: "Testing" },
+//     ],
+//     author: {
+//       _id: "author2",
+//       name: "Jane Smith",
+//       picture: "url-to-picture",
+//     },
+//     upvotes: 338030,
+//     views: 420420,
+//     answers: [
+//       { text: "Example answer 1", author: "John Doe" },
+//       { text: "Example answer 2", author: "Alice Johnson" },
+//       { text: "Example answer 3", author: "Max Muller" },
+//     ],
+//     createdAt: new Date("2023-02-15"),
+//   },
+// ];

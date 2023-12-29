@@ -42,6 +42,10 @@
   .text-dark100_light900 {
     @apply text-dark-100 dark:text-light-900 !important;
   }
+  
+  .text-dark300_light800 {
+    @apply text-dark-300 dark:text-light-800 !important;
+  }
 
   .text-dark200_light900 {
     @apply text-dark-200 dark:text-light-900;
@@ -136,19 +140,19 @@
   }
 
   .paragraph-regular {
-    @apply text-[16px] font-normal leading-[22.4px];
+    @apply text-[16px] font-normal leading-[22.4px] !important;
   }
 
   .paragraph-medium {
-    @apply text-[16px] font-medium leading-[22.4px];
+    @apply text-[16px] font-medium leading-[22.4px] !important;
   }
 
   .paragraph-semibold {
-    @apply text-[16px] font-semibold leading-[20.8px];
+    @apply text-[16px] font-semibold leading-[20.8px] !important;
   }
 
   .body-regular {
-    @apply text-[14px] font-normal leading-[19.6px];
+    @apply text-[14px] font-normal leading-[19.6px] !important;
   }
 
   .body-medium {
@@ -199,6 +203,10 @@
     @apply  shadow-light-100 dark:shadow-none;
   }
 
+  .editor-icon {
+    @apply w-7 h-7 p-1.5 rounded-md;
+  }
+
   .primary-gradient {
     background: linear-gradient(
       129deg,
@@ -214,4 +222,8 @@
       rgba(19, 22, 28, .7) 100%
     );
   }
+
+  /* pre {
+    @apply bg-light-850 dark:bg-dark-300 p-2 rounded-md font-mono text-sm !important;
+  } */
 } 
