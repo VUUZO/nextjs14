@@ -60,7 +60,7 @@ body {
   }
 
   .no-focus {
-    @apply focus-visible:ring-0 focus-visible:ring-transparent
+    @apply focus-visible:ring-0 focus-visible:ring-transparent !important;
   }
   
   .active-theme {
@@ -123,10 +123,7 @@ body {
   color:#ff7000 !important;
 }
 
-.markdown pre {
-  display:grid;
-  width:100%;
-}
+
 
 .markdown pre code { 
   width:100%;
