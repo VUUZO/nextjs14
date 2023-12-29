@@ -113,7 +113,6 @@ export const Question = () => {
                 <span className='text-[#FF2121]'> *</span>
               </FormLabel>
               <FormControl className='py-4 px-6 paragraph-semibold text-dark300_light800 rounded-md border light-border-2 background-light800_dark300'>
-                {/* TODO: Add an Editor component */}
                 <Tiptap onChange={field.onChange} />
               </FormControl>
               <FormDescription className='body-regular text-light-500'>
@@ -133,10 +132,10 @@ export const Question = () => {
                 Tags
                 <span className='text-[#FF2121]'> *</span>
               </FormLabel>
-              <FormControl className='py-4 px-6 paragraph-semibold text-dark300_light800 rounded-md border light-border-2 background-light800_dark300'>
+              <FormControl className=''>
                 <>
                 <Input
-                  className='ring-offset-light-800 dark:ring-offset-dark-300'
+                  className='ring-offset-light-800 dark:ring-offset-dark-300 py-4 px-6 paragraph-regular text-dark300_light800 rounded-md border light-border-2 background-light800_dark300'
                   onKeyDown={e => handleInputKeyDown(e, field)}
                 />
 

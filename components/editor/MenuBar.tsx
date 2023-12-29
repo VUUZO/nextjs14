@@ -81,7 +81,7 @@ export const MenuBar = ({ editor }: { editor: Editor }) => {
   ]
 
   return (
-    <div className="background-light900_dark300 py-[9px] px-[21px] text-light-400 flex gap-2">
+    <div className="background-light900_dark300 py-[9px] border-b light-border-2 px-[21px] text-light-400 flex gap-2">
       {
         items.map((item, i) => (
           <Fragment key={i}>
