@@ -6,7 +6,6 @@ import { useState } from "react"
 
 export const GlobalSearch = () => {
   const [value, setValue] = useState('')
-  console.log(value)
 
   return (
     <div className="relative w-full background-light800_darkgradient max-w-[600px] rounded-[10px] transition-colors max-lg:hidden px-4 border border-light-700 dark:border-dark-300 focus-within:ring-4 focus-within:border-primary-500 dark:focus-within:border-primary-500/50 focus-within:ring-primary-500/20">
