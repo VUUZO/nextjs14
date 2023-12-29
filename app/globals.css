@@ -106,11 +106,11 @@ body {
   background:#555;
 }
 
-.markdown a {
+/* .editor__conrent a {
   color:#1da1f2;
-}
+} */
 
-.markdown a,code {
+/* .editor__conrent a,code {
   overflow-wrap:break-word;
   word-wrap:break-word;
   -ms-word-break:break-all;
@@ -121,16 +121,16 @@ body {
   hyphens:auto;
   padding:2px;
   color:#ff7000 !important;
-}
+} */
 
 
 
-.markdown pre code { 
+/* .editor__conrent pre code { 
   width:100%;
   display:block;
   overflow-x:auto;
   color:inherit !important;
-}
+} */
 
 .cl-internal-b3fm6y {
   background:linear-gradient(

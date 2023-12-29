@@ -223,7 +223,7 @@
     );
   }
 
-  pre {
+  /* pre {
     @apply bg-light-850 dark:bg-dark-300 p-2 rounded-md font-mono text-sm !important;
-  }
+  } */
 } 
