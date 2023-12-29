@@ -19,11 +19,19 @@ import { QuestionsSchema } from '@/lib/validations'
 import Tiptap from '../editor/Tiptap'
 import Image from 'next/image'
 import { useState } from 'react'
+import { createQuestion } from '@/lib/actions/question.action'
+import { useRouter, usePathname } from 'next/navigation'
 
 
+interface Props {
+  mongoUserId: string
+}
 
-export const Question = () => {
+export const Question = ({ mongoUserId }: Props) => {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
+
 
   const form = useForm<z.infer<typeof QuestionsSchema>>({
     resolver: zodResolver(QuestionsSchema),
@@ -34,11 +42,19 @@ export const Question = () => {
     },
   })
 
-  function onSubmit(values: z.infer<typeof QuestionsSchema>) {
+  async function onSubmit(values: z.infer<typeof QuestionsSchema>) {
     setIsSubmitting(true)
 
     try {
-      
+      await createQuestion({
+        title: values.title,
+        content: values.explanation,
+        tags: values.tags,
+        author: JSON.parse(mongoUserId),
+        path: pathname
+      })
+
+      router.push('/')
     } catch (error) {
 
     } finally {
@@ -116,7 +132,7 @@ export const Question = () => {
                 <Tiptap onChange={field.onChange} />
               </FormControl>
               <FormDescription className='body-regular text-light-500'>
-                Introduce the problem and expand on what you put in the title. Minimum 20 characters.
+                Introduce the problem and expand on what you put in the title. Minimum 35 characters.
               </FormDescription>
               <FormMessage className='text-red-500 body-regular'/>
             </FormItem>
@@ -169,7 +185,7 @@ export const Question = () => {
           className='self-end paragraph-medium text-light-900 rounded-lg primary-gradient py-3 px-4 min-h-[46px] w-[173px] ring-offset-light-850 dark:ring-offset-dark-100'
           disabled={isSubmitting}
         >
-          Ask a Question
+          {isSubmitting ? 'Posting' : 'Ask a Question'}
         </Button>
       </form>
     </Form>
