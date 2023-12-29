@@ -204,7 +204,7 @@
   }
 
   .editor-icon {
-    @apply w-7 h-7 block p-1.5 rounded-md;
+    @apply w-7 h-7 p-1.5 rounded-md;
   }
 
   .primary-gradient {
