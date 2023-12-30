@@ -28,7 +28,7 @@ export default async function Page() {
           message="Select a Filter"
         />
       </div>
-      <section className="mt-12 grid gap-3 gap-y-9 grid-cols-2 sm:grid-cols-[repeat(auto-fill,minmax(240px,1fr))]">
+      <section className="mt-12 grid gap-3 gap-y-9 xs:grid-cols-[repeat(auto-fill,minmax(240px,1fr))]">
         {result.users.length > 0 ? (
           result.users.map(user => <UserCard key={user._id} user={user} />)
         ) : (
