@@ -164,7 +164,7 @@
   }
 
   .small-regular {
-    @apply text-[12px] font-normal leading-[15.6px];
+    @apply text-[12px] font-normal leading-[15.6px] !important;
   }
 
   .small-medium {
@@ -223,7 +223,12 @@
     );
   }
 
-  /* pre {
-    @apply bg-light-850 dark:bg-dark-300 p-2 rounded-md font-mono text-sm !important;
-  } */
+  .code {
+    @apply text-black text-xs px-[5px] py-[1px] bg-zinc-100 border border-zinc-200 rounded dark:bg-zinc-800 dark:border-zinc-700 dark:text-white;
+  }
+
+  .code-block {
+    @apply bg-dark-300 text-light-500 p-4 rounded-md font-mono text-sm my-3 ;
+  }
+
 } 

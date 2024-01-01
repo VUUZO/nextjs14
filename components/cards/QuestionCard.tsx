@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Metric } from "../shared/Metric"
 import { formatNumber, getTimestamp } from "@/lib/utils"
+import Link from "next/link"
 
 interface QuestionProps {
   _id: string
@@ -34,7 +35,9 @@ export const QuestionCard = ({
     <div className="px-11 py-9 flex flex-col gap-6 shadow-light-100 rounded-[10px] bg-light-900 dark:dark-gradient border border-card">
       <div>
         <p className="sm:hidden text-dark400_light700 small-regular mb-2">{getTimestamp(createdAt)}</p>
-        <h3 className="h3-semibold text-dark200_light900 mb-[14px]">{title}</h3>
+        <Link href={`/question/${_id}`}>
+          <h3 className="h3-semibold text-dark200_light900 mb-[14px]">{title}</h3>
+        </Link>
         <div className="flex gap-2">
           {tags.map(tag => (
             <div key={tag._id} className="py-2 px-4 rounded-md inline-flex items-center justify-center uppercase text-light400_light500 background-light800_dark300 subtle-medium">
