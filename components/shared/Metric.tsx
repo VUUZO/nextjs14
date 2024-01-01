@@ -6,17 +6,17 @@ interface MetricProps {
   imgUrl: string
   alt: string
   value: string | number
-  title: string
+  title?: string
   isAuthor?: boolean
   textStyles?: string
   href?: string
 }
 
-export const Metric = ({ imgUrl, alt, value, title, href, isAuthor = false, textStyles }: MetricProps) => {
+export const Metric = ({ imgUrl, alt, value, title, href, isAuthor = false, textStyles = '' }: MetricProps) => {
   
   if (isAuthor) {
     return (
-      <div className="flex gap-1 items-center text-dark400_light700">
+      <div className="flex gap-1 items-center text-dark-400 dark:text-light-700">
         <Link href={href!}>
           <div className="flex items-center gap-[4px]">
             <Image
@@ -26,7 +26,7 @@ export const Metric = ({ imgUrl, alt, value, title, href, isAuthor = false, text
               height={20}
               className="w-[20px] aspect-square rounded-full"
             />
-            <p className="body-medium">{value}</p>
+            <p className="body-medium ">{value}</p>
           </div>
         </Link>
         <p className="hidden sm:block small-regular">{title}</p>
@@ -34,7 +34,7 @@ export const Metric = ({ imgUrl, alt, value, title, href, isAuthor = false, text
     )
   } else {
     return (
-      <div className="flex items-center gap-[2px]">
+      <div className="flex items-center gap-1 text-dark-400 dark:text-light-700">
         <Image
           src={imgUrl}
           alt={alt}

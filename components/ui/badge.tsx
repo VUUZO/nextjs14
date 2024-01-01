@@ -18,7 +18,8 @@ const badgeVariants = cva(
         tag:
         "background-light800_dark400 text-dark500_light500 px-4 py-2 rounded-md uppercase border-none",
         tag2:
-        "background-light800_dark400 paragraph-semibold text-dark-600 dark:text-light-900 rounded px-[20px] py-[6px] border border-light-900 dark:border-none"
+        "background-light800_dark400 paragraph-semibold text-dark-600 dark:text-light-900 rounded px-[20px] py-[6px] border border-light-900 dark:border-none",
+        "tag3": 'subtle-medium border-none rounded-md uppercase py-2 px-4 bg-light-800 text-light-400 dark:bg-dark-300 dark:text-light-500',
       },
     },
     defaultVariants: {

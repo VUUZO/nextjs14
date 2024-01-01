@@ -15,15 +15,24 @@ export const Tiptap = ({ onChange }: { onChange: (richText: string) => void }) =
       attributes: {
         class: 'prose dark:prose-invert text-dark300_light800 focus:outline-none min-h-[150px]',
       },
-
-
     },
     extensions: [
-      StarterKit.configure({ history: false }),
+      StarterKit.configure({
+        history: false,
+        code: {
+          HTMLAttributes: {
+            class: 'code',
+          }
+        }
+      }),
       Highlight,
       TaskList,
       TaskItem,
-      CodeBlock,
+      CodeBlock.configure({
+        HTMLAttributes: {
+          class: 'code-block',
+        }
+      }),
       Heading.configure({
         HTMLAttributes: {
           class: 'text-xl font-bold',
