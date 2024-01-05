@@ -20,7 +20,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
 
   const result = await getQuestionById({ questionId: id })
-
+  
   return (
     <div className='flex flex-col gap-8'>
       <div className="flex flex-col gap-[18px]"> 
@@ -33,12 +33,21 @@ const Page = async ({ params }: { params: { id: string } }) => {
                 width={22}
                 height={22}
                 alt={result.author.name}
-                className="rounded-full"
+                className="rounded-full aspect-square object-cover"
               />
               <p className="paragraph-semibold text-dark-300 dark:text-light-700">{result.author.name}</p>
             </div>
     
-            <Votes />
+            <Votes
+              type='question'
+              itemId={JSON.stringify(result._id)}
+              userId={JSON.stringify(mongoUser._id)}
+              upvotes={result.upvotes.length}
+              hasupVoted={result.upvotes.includes(mongoUser._id)}
+              downvotes={result.downvotes.length}
+              hasdownVoted={result.downvotes.includes(mongoUser._id)}
+              hasSaved={mongoUser.saved.includes(result._id)}
+            />
           </div>
 
 
@@ -85,7 +94,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
       <AllAnswers
         questionId={result._id}
-        userId={JSON.stringify(mongoUser._id)}
+        userId={mongoUser._id}
         totalAnswers={result.answers.length}
       />
 

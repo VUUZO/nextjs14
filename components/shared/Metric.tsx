@@ -24,9 +24,9 @@ export const Metric = ({ imgUrl, alt, value, title, href, isAuthor = false, text
               alt={alt}
               width={20}
               height={20}
-              className="w-[20px] aspect-square rounded-full"
+              className="w-[20px] object-cover aspect-square rounded-full"
             />
-            <p className="body-medium ">{value}</p>
+            <p className="body-medium">{value}</p>
           </div>
         </Link>
         <p className="hidden sm:block small-regular">{title}</p>

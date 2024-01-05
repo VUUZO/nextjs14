@@ -7,11 +7,12 @@ interface NoResultsProps {
   description: string
   link: string
   linkTitle: string
+  className?: string
 }
 
-export const NoResult = ({ title, description, link, linkTitle }: NoResultsProps) => {
+export const NoResult = ({ title, description, link, linkTitle, className }: NoResultsProps) => {
   return (
-    <div className="mt-10 flex mx-auto max-w-lg flex-col items-center justify-center">
+    <div className={`mt-10 flex mx-auto max-w-lg flex-col items-center justify-center ${className}`}>
       <Image
         src='/assets/images/light-illustration.png'
         alt="No result illustration"
@@ -27,7 +28,7 @@ export const NoResult = ({ title, description, link, linkTitle }: NoResultsProps
         className="hidden object-contain dark:block"
       />
       <h2 className="h2-bold text-dark200_light900 mt-8">{title}</h2>
-      <p className="body-regular text-dark500_light700 text-center my-[14px]">{description}</p>
+      <p className="body-regular text-dark500_light700 my-[14px] text-center text-balance">{description}</p>
       <Link href={link}>
         <Button className="py-3 text-light-900 px-4 h-[42px] rounded-lg min-w-[173px] primary-gradient paragraph-medium">{linkTitle}</Button>
       </Link>

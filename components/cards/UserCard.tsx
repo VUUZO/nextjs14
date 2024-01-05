@@ -19,14 +19,14 @@ export const UserCard = async ({ user }: Props) => {
   return (
     <Link href={`/user/${user._id}`}>
       <div className="p-8 background-light900_dark200 flex flex-col items-center gap-5 rounded-[10px] border border-[rgba(200, 203, 217, 0.33)] dark:border-dark-300 shadow-light-100 dark:shadow-none">
-        <div className="text-center">
+        <div className="text-center flex flex-col items-center">
           <Image
             src={user.picture}
             alt={user.username}
-            width={100}
             height={100}
-            className="rounded-full"
-            />
+            width={100}
+            className="aspect-square w-[100px] object-cover rounded-full"
+          />
           <h3 className="h3-bold text-dark200_light900 mt-5 mb-[4px]">{user.name}</h3>
           <p className="text-dark500_light500">@{user.username}</p>
         </div>
