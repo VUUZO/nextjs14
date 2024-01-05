@@ -32,7 +32,7 @@ export interface GetAnswersParams {
 
 export interface AnswerVoteParams {
   answerId: string
-  userId: string;
+  userId: string
   hasupVoted: boolean
   hasdownVoted: boolean
   path: string

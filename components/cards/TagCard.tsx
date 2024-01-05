@@ -1,12 +1,9 @@
 import Link from "next/link"
 import { Badge } from "../ui/badge"
+import { ITag } from "@/app/(root)/tags/page"
 
 interface Props {
-  tag: {
-    _id: string
-    name: string
-    questions: string
-  }
+  tag: ITag
 }
 
 export const TagCard = ({ tag }: Props) => {

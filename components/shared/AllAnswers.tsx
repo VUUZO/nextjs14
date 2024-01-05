@@ -5,6 +5,7 @@ import { ParseHTML } from "./ParseHTML"
 import Image from "next/image"
 import { getTimestamp } from "@/lib/utils"
 import Link from "next/link"
+import { Votes } from "./Votes"
 
 interface Props {
   questionId: string
@@ -28,7 +29,7 @@ export const AllAnswers = async ({  questionId, userId, totalAnswers, page, filt
         <div className="flex flex-col gap-8">
           {result.answers.map(answer => (
             <article key={answer._id} className="flex flex-col gap-4">
-              <div>
+              <div className="flex justify-between gap-5">
                 <div className="flex gap-[5px] items-center">
                   <Link href={`/profile/${answer.author.clerkId}`} className="flex gap-[5px] items-center">
                     <Image
@@ -36,7 +37,7 @@ export const AllAnswers = async ({  questionId, userId, totalAnswers, page, filt
                       width={24}
                       height={24}
                       alt={answer.author.name}
-                      className="rounded-full"
+                      className="rounded-full aspect-square object-cover"
                     />
                     <p>
                       <span className="body-semibold text-dark-300 dark:text-light-700">{answer.author.name}</span>
@@ -44,9 +45,15 @@ export const AllAnswers = async ({  questionId, userId, totalAnswers, page, filt
                   </Link>
                   <span className="small-regular text-light-400 dark:text-light-500">· answered {getTimestamp(answer.createdAt)}</span>
                 </div>
-                <div>
-                  {/* upvotes & downvotes */}
-                </div>
+                <Votes
+                  type='answer'
+                  itemId={JSON.stringify(answer._id)}
+                  userId={JSON.stringify(userId)}
+                  upvotes={answer.upvotes.length}
+                  hasupVoted={answer.upvotes.includes(userId)}
+                  downvotes={answer.downvotes.length}
+                  hasdownVoted={answer.downvotes.includes(userId)}
+                />
               </div>
               <ParseHTML data={answer.content}/>
             </article>

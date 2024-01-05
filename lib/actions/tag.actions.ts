@@ -2,8 +2,9 @@
 
 import User from "@/database/user.model";
 import { connectToDatabase } from "../db";
-import { GetAllTagsParams, GetTopInteractedTagsParams } from "./shared.types";
+import { GetAllTagsParams, GetQuestionsByTagIdParams, GetTopInteractedTagsParams } from "./shared.types";
 import Tag from "@/database/tag.model";
+import Question from "@/database/question.model";
 
 export async function getAllTags(params: GetAllTagsParams) {
   try {
