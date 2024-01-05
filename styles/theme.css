@@ -228,7 +228,7 @@
   }
 
   .code-block {
-    @apply bg-dark-300 text-light-500 p-4 rounded-md font-mono text-sm my-3 ;
+    @apply bg-dark-300 text-light-500 p-4 rounded-md font-mono text-sm my-3 overflow-x-auto w-auto max-h-[600px];
   }
 
 } 

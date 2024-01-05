@@ -8,7 +8,7 @@ interface Props {
 
 export const TagCard = ({ tag }: Props) => {
   return (
-    <Link href={`/tag/${tag._id}`}>
+    <Link href={`/tags/${tag._id}`}>
     <div className="p-8 background-light900_dark200 flex items-start flex-col gap-5 rounded-[10px] border border-[rgba(200, 203, 217, 0.33)] dark:border-dark-300 shadow-light-100 dark:shadow-none">
       <Badge variant={"tag2"}>
         {tag.name}

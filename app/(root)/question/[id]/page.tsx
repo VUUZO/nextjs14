@@ -9,6 +9,7 @@ import { getUserById } from "@/lib/actions/user.action"
 import { formatNumber, getTimestamp } from "@/lib/utils"
 import { auth } from "@clerk/nextjs"
 import Image from "next/image"
+import Link from "next/link"
 import { redirect } from "next/navigation"
 
 const Page = async ({ params }: { params: { id: string } }) => {
@@ -22,6 +23,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   const result = await getQuestionById({ questionId: id })
   
   return (
+    <>
     <div className='flex flex-col gap-8'>
       <div className="flex flex-col gap-[18px]"> 
 
@@ -86,9 +88,11 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
       <div className="flex gap-2">
         {result.tags.map((tag: any) => (
-          <Badge variant={"tag3"} key={tag._id} className="text-light-400">
-            {tag.name}
-          </Badge>
+          <Link href={`/tags/${tag._id}`}>
+            <Badge variant={"tag3"} key={tag._id} className="text-light-400">
+              {tag.name}
+            </Badge>
+          </Link>
         ))}
       </div>
 
@@ -104,6 +108,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
         authorId={JSON.stringify(mongoUser._id)}
       />
     </div>
+    </>
   )
 }
 

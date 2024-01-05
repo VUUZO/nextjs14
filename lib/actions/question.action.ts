@@ -7,6 +7,7 @@ import Tag from "@/database/tag.model"
 import User from "@/database/user.model"
 import { revalidatePath } from "next/cache"
 
+
 export const getQuestions = async (params: GetQuesitonsParams) => {
   try {
     connectToDatabase()
@@ -105,7 +106,6 @@ export async function upvoteQuestion(params: QuestionVoteParams) {
     throw error
   }
 }
-
 
 export async function downvoteQuestion(params: QuestionVoteParams) {
   try {

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { sidebarLinks } from "@/constants"
-import { SignIn, SignUp, SignedOut } from "@clerk/nextjs"
+import { SignedOut } from "@clerk/nextjs"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -11,7 +11,7 @@ export const LeftSidebar = () => {
   const pathname = usePathname()
 
   return (
-    <section className="px-6 pt-36 pb-8 background-light900_dark200 h-screen sticky top-0 left-0 w-fit flex-col border-r border-[#C8CBD954] dark:border-[#0F111780] lg:w-[266px] hidden sm:flex">
+    <section className="px-6 pt-36 pb-8 background-light900_dark200 h-screen sticky top-0 left-0 flex-col border-r border-[#C8CBD954] dark:border-[#0F111780] hidden sm:flex lg:w-[266px]">
       <div className="flex flex-col gap-6">
         {sidebarLinks.map(link => {
           const isActive = link.route === pathname 

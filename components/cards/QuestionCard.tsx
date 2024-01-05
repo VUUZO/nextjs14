@@ -40,9 +40,11 @@ export const QuestionCard = ({
         </Link>
         <div className="flex gap-2">
           {tags.map(tag => (
-            <div key={tag._id} className="py-2 px-4 rounded-md inline-flex items-center justify-center uppercase text-light400_light500 background-light800_dark300 subtle-medium">
-              {tag.name}
-            </div>
+            <Link href={`/tags/${tag._id}`}>
+              <div key={tag._id} className="py-2 px-4 rounded-md inline-flex items-center justify-center uppercase text-light400_light500 background-light800_dark300 subtle-medium">
+                {tag.name}
+              </div>
+            </Link>
           ))}
         </div>
       </div>
